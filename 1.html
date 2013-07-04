@@ -139,6 +139,7 @@
 			ae = new AutoEmbed();
 			var res = ae.parseUrl(userInput)
 			// console.log("matches =>"+ae._media_id)
+			// console.log("matches =>"+ae.getImageURL())
 			document.getElementById("preview").innerHTML = ae.getEmbedCode()
 		}
 
@@ -147,6 +148,7 @@
 			ae = new AutoEmbed();
 			var res = ae.parseUrl(comboInput)
 			// console.log("matches =>"+ae._media_id)
+			// console.log("matches =>"+ae.getImageURL())
 			document.getElementById("preview").innerHTML = ae.getEmbedCode()
 		}
     </script>

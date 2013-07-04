@@ -102,7 +102,7 @@ function AutoEmbed() {
      * return string - the thumbnail href
      */
     this.getImageURL = function () {
-        if (self._stub['image-src']) return false;
+        if (!self._stub['image-src']) return false;
 
         var thumb = self._stub['image-src'];
         for (var i = 1; i <= self._media_id.length; i++) {
