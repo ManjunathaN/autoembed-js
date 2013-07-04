@@ -39,17 +39,6 @@ function AutoEmbed() {
     };
 
     /**
-     * Create the embed code for a local file
-     *
-     * @param $file string - the file we are wanting to embed
-     *
-     * @return boolean - whether or not the url contains valid/supported video
-     */
-    this.embedLocal = function (file) {
-        return self.parseUrl("__local__" + file + "");
-    };
-
-    /**
      * Returns info about the stub
      *
      * @param string $property - (optional) the specific
@@ -106,7 +95,7 @@ function AutoEmbed() {
 
         var thumb = self._stub['image-src'];
         for (var i = 1; i <= self._media_id.length; i++) {
-            thumb = thumb.replace('$' + "" + i, self._media_id[i - 1]);
+            thumb = thumb.replace('$' + i, self._media_id[i - 1]);
         }
 
         return thumb;
@@ -248,18 +237,18 @@ function AutoEmbed() {
 
         for (var param in self._object_attribs) {
             var value = self._object_attribs[param];
-            object_attribs += '  ' + "" + param + "" + '="' + "" + value + "" + '"';
+            object_attribs += '  ' + param + '="' + value + '"';
         }
 
         for (var param in self._object_params) {
             var value = self._object_params[param];
-            object_params += '<param name="' + "" + param + "" + '" value="' + "" + value + "" + '" />';
+            object_params += '<param name="' + param + '" value="' + value + '" />';
         }
 
         str = "<object " + object_attribs + "> " + object_params + " " + AutoEmbed.AE_TAG + "</object>"
 
         for (var i = 1; i <= self._media_id.length; i++) {
-            str = str.replace('$' + "" + i, self._media_id[i - 1]);
+            str = str.replace('$' + i, self._media_id[i - 1]);
         }
 
         return str;
@@ -275,7 +264,7 @@ function AutoEmbed() {
         var source = self._stub['iframe-player'];
 
         for (var i = 1; i <= self._media_id.length; i++) {
-            source = source.replace('$' + "" + i, self._media_id[i - 1]);
+            source = source.replace('$' + i, self._media_id[i - 1]);
         }
 
         var width = self._object_attribs['width'];
@@ -294,8 +283,8 @@ function AutoEmbed() {
         var flashvars = self._stub['flashvars'] ? self._stub['flashvars'] : null;
 
         for (var i = 1; i <= self._media_id.length; i++) {
-            source = source.replace(new RegExp('$' + "" + i, 'gim'), self._media_id[i - 1]);
-            flashvars = flashvars == null ? null : flashvars.replace(new RegExp('$' + "" + i, 'gim'), self._media_id[i - 1]);
+            source = source.replace(new RegExp('$' + i, 'gim'), self._media_id[i - 1]);
+            flashvars = flashvars == null ? null : flashvars.replace(new RegExp('$' + i, 'gim'), self._media_id[i - 1]);
         }
 
         source = htmlspecialchars(source);

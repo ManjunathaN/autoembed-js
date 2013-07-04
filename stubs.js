@@ -1346,13 +1346,5 @@ var AutoEmbed_stubs = [
     'embed-src' : 'http://vhead.blog.sina.com.cn/player/outer_player.swf?auto=0&vid=$2&uid=$3',
     'embed-width' : '480',
     'embed-height' : '370',
-  },
-  {
-    'title' : 'Local Content',
-    'website' : 'localhost',
-    'url-match' : '__local__(.*)',
-    'embed-src' : '$2',
-    'embed-width' : '425',
-    'embed-height' : '344',
   }
 ]
