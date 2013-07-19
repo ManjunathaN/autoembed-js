@@ -264,13 +264,3 @@ if(typeof htmlspecialchars == 'undefined') {
             8364 : 'euro'
       };
 }
-
-// function file_get_contents(url){
-//       if (document.getElementById){
-//             objXml = new XMLHttpRequest();
-//             objXml.open("GET",url,false);
-//             objXml.send(null);
-//             console.log(objXml.responseText);
-//      }
-// }
-
